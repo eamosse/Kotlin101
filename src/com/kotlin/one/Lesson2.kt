@@ -52,18 +52,6 @@ fun applyDiscount(price: Double, discount: Double = 0.1): Double {
 }
 
 
-// TODO 10: Return a lambda based on operation symbol.
-fun getOperation(symbol: String): (Int, Int) -> Int {
-    TODO(
-        "Return a lambda based on operation symbol. \uD83D\uDD27" +
-                "- '+' for addition\n" +
-                "- '-' for subtraction\n" +
-                "- '*' for multiplication\n" +
-                "- '/' for division"
-    )
-}
-
-
 fun capitalizeWords(sentence: String): String {
     TODO(
         "Capitalize the first letter of each word in a sentence."
@@ -111,22 +99,10 @@ fun miniCalculator() {
     TODO(
         "Create a simple calculator that takes two numbers and an operator (+, -, *, /) from the user and prints the result."
     )
-    /*println("Enter first number:")
+    /*
+    Example
+    println("Enter first number:")
     val a = readln().toDouble()
-    println("Enter operator (+, -, *, /):")
-    val op = readln()
-    println("Enter second number:")
-    val b = readln().toDouble()
-
-    val result = when (op) {
-        "+" -> a + b
-        "-" -> a - b
-        "*" -> a * b
-        "/" -> if (b != 0.0) a / b else Double.NaN
-        else -> Double.NaN
-    }
-
-    println("Result: $result")
      */
 }
 
@@ -139,13 +115,6 @@ fun analyzeText(text: String): Map<String, Any> {
                 "- Longest word\n" +
                 "- Average word length"
     )
-    /*val words = text.split(" ")
-    return mapOf(
-        "charCount" to 0, // 🔧
-        "wordCount" to 0,
-        "longestWord" to "",
-        "averageWordLength" to 0.0
-    )*/
 }
 
 
@@ -191,10 +160,7 @@ fun main() {
     verify("applyDiscount(100.0) == 90.0") { (applyDiscount(100.0) - 90.0).absoluteValue < 0.001 }
     verify("applyDiscount(100.0, 0.2) == 80.0") { (applyDiscount(100.0, 0.2) - 80.0).absoluteValue < 0.001 }
 
-    // 🔵 LEVEL 4
-    verify("getOperation('+')(4,5) == 9") { getOperation("+")(4, 5) == 9 }
-
-    // 🟣 LEVEL 5
+    // 🟣 LEVEL 4
     verify("capitalizeWords works") { capitalizeWords("hello kotlin world") == "Hello Kotlin World" }
     verify("bmi(70,1.75) ≈ 22.86") { bmi(70.0, 1.75) in 22.8..22.9 }
     verify("passwordStrength detects strong") { passwordStrength("MyPass123") }
@@ -203,7 +169,7 @@ fun main() {
         filterEvenNumbers(listOf(1, 2, 3, 4, 5, 6)) == listOf(2, 4, 6)
     }
 
-    // ⚫ LEVEL 6
+    // ⚫ LEVEL 5
     verify("factorial(5) == 120") { factorial(5) == 120 }
     verify("fibonacci(6) == 8") { fibonacci(6) == 8 }
 
